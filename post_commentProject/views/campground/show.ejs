@@ -1,0 +1,38 @@
+<%layout('/layout/boilerplate.ejs')%>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="card-body">
+                    <h4 class="card-title text-success"><%=post.post_title%></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=post.username%></h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at%></h6>
+                    <p class="card-text text-muted"><%=post.post_info%></p>
+                  </div>
+            <div class="card-body">
+                <a href="/post/<%=post._id%>/edit" class="btn btn-warning card-link">Edit</a>
+                <form class="d-inline" action="/post/<%=post._id%>?_method=delete"  method="post">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a class="btn btn-danger" href="/post">Go To Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<h5>Comments</h5>
+<%for(let comment of post.comments){%>
+<div class="card text-muted mb-2">
+    <div class=" text-success card-header">
+        <%=comment.comment_user_name%>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p class="text-primary text-primary"><%=comment.comment%></p>
+        <footer class="blockquote-footer text-danger"><%=comment.date%></footer>
+      </blockquote>
+    </div>
+  </div>
+  <%}%>

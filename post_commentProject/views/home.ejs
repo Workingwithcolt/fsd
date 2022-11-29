@@ -1,0 +1,35 @@
+<%layout('/layout/boilerplate.ejs')%>
+<%for(let camp of campground){%>
+<div class="row">
+<div class="col-6 offset-3">
+<div class="card mb-4 p-3" style="width: 38rem;">
+  <img src="" class="card-img-top" alt=""/>
+  <div class="card-body">
+    <h5 class="text-success card-title"><%=camp.username%></h5>
+    <!-- <h3 class="text-success card-title"><%=campground.username%></h3> -->
+    <p class="card-text text-muted"><%=camp.post_title%></p>
+    <!-- number of likes -->
+    <h6 class="text-body like">Like:<%=camp.like%></h6>
+    <!-- number of comments -->
+    <h6 class="text-body">comment:43</h6>
+    <div class="row">
+    <form action="/post/<%=camp._id%>" class=" mb-2" method ="post" onclick="updateLikes()" >
+        <button type="submit"   class="btn col-auto btn-success"> Like </button>
+    </form>
+    <div class="col-auto mb-2">
+        <a  href="/post/<%=camp._id%>/comment" class="btn btn-success"> comment </a>
+    </div>
+  </div>
+    <a href="/post/<%=camp._id%>" class="btn btn-primary">Go To Post</a>
+  </div>
+</div>
+</div>
+</div>
+<%}%>
+<script src="../js/main.js"></script>
+<!-- post_title:String,
+username:String,
+post_info:String,
+created_at: {type: Date, default: Date.now},
+comments:[{comment_user_name:String,comment:String}],
+like:{ type: Number, default: 0 }, -->

@@ -1,0 +1,10 @@
+firstly we are going to create the model 
+which has the fields of message , date ,time user_name
+the pages 
+if not login 
+we can see the post only and we dont have authority to change the post othes 
+when we login we have authority to update and add new post we can comment to our post
+but dont like the pos other have authority to like and comment 
+
+the admin page should display the info about the number of comments and and likes
+ when we go to the particular post we see the comments and likes 

@@ -1,0 +1,15 @@
+<%layout('/layout/boilerplate.ejs')%>
+<h3>Chetan</h3>
+<form action="/post/<%=post._id%>?_method=put" name="" method="post">
+    <label name="name" class="form-label mb-2" for="title">Name</label>
+    <input type="text" class ="form-control"style="width:10rem" id ="title"  name="user">
+    <br>
+<div class="form-floating">
+    <textarea  class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+    <label name="comment" for="floatingTextarea2">Comments</label>
+  </div>
+  <br>
+  <button class = "btn btn-success type="submit">Add</button>
+</form>
+<br>
+<a class="btn btn-danger" href="/post">Go To Post</a>

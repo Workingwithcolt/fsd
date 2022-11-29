@@ -1,0 +1,13 @@
+.container_{
+    background-image: url(../images/marcus-loke-xXJ6utyoSw0-unsplash.jpg);
+    place-content: center;
+    height: 50rem;
+    width:100%; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.layout_padding{
+    margin-top:1rem;
+}
